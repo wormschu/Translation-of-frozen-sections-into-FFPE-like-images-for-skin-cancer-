@@ -17,3 +17,35 @@ Models Used in the Study (Unpaired Image Translation)
 
 🔹 AI-FFPE
 👉 https://github.com/DeepMIALab/AI-FFPE
+
+## Final Model
+Among the evaluated architectures (CycleGAN, CUT, SANTA, and AI-FFPE), 
+CUT demonstrated the best overall performance based on quantitative 
+metrics, downstream task evaluation, and qualitative expert assessment.  
+Therefore, CUT was selected as the final model for whole-slide generation 
+and clinical validation.
+
+## CUT Training Configuration
+- Input: 512 × 512 RGB patches  
+- Domain A: Frozen section images  
+- Domain B: FFPE images  
+- Training: Unpaired translation (A → B)
+
+### Optimization
+- Optimizer: Adam  
+- β₁ = 0.5  
+- β₂ = 0.999  
+- Initial learning rate: 2 × 10⁻⁴  
+- Learning rate schedule: Linear decay  
+- GAN objective: Least-Squares GAN (LSGAN)  
+
+### Architecture
+- Generator: ResNet blocks  
+- Discriminator: PatchGAN  
+- Normalization: Instance normalization  
+- Loss weights:
+  - λ_GAN = 1.0  
+  - λ_NCE = 1.0  
+
+### Training
+- Iterations: 100,000  
