@@ -18,6 +18,25 @@ Models Used in the Study (Unpaired Image Translation)
 🔹 AI-FFPE
 👉 https://github.com/DeepMIALab/AI-FFPE
 
+### Patch Extraction from Whole-Slide Images
+
+Whole-slide images (WSIs) were processed using OpenSlide.  
+Patches were extracted at pyramid level 2 (≈10× equivalent resolution).
+
+Patch extraction criteria:
+
+- Patch size: 512 × 512 pixels
+- Only fully tissue-covered patches were retained (alpha channel = 255)
+- Non-overlapping extraction
+
+This preprocessing pipeline was applied identically to both Frozen and FFPE WSIs.
+
+## Repository Status
+The full training and implementation code used in this study will be made publicly available upon acceptance of the associated manuscript.
+
+The current repository provides a description of the model configuration and preprocessing pipeline to facilitate methodological transparency during peer review.
+
+
 ## Final Model
 Among the evaluated architectures (CycleGAN, CUT, SANTA, and AI-FFPE), 
 CUT demonstrated the best overall performance based on quantitative 
