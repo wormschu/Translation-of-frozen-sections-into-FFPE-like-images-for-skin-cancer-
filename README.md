@@ -67,4 +67,10 @@ and clinical validation.
   - λ_NCE = 1.0  
 
 ### Training
-- Iterations: 100,000  
+- Iterations: 100,000
+
+## Data Availability
+
+A preview dataset containing one representative de-identified Frozen–FFPE whole-slide image (WSI) pair per skin cancer subtype (EMPD, Bowen’s disease, SCC, BCC, and melanoma) is publicly available on Zenodo:
+
+- DOI: 10.5281/zenodo.18780726
